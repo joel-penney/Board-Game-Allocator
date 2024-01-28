@@ -13,11 +13,17 @@ A particular weakness is in the high runtime complexity of the central algorithm
 Run the file vote.py directly, with an accompanying pref.txt file that gives players' preferences for games in the following format:
 
 \[game name 1\]:\[minimum player requirement\]:\[maximum player requirement\]
+
 \[game name 2\]:\[minimum player requirement\]:\[maximum player requirement\]
+
 ...
+
 \* <- divider symbol needed between list of games and list of player preferences.
+
 \[player 1\]| \[game name 1\]:\[rating\], \[game name 2\]:\[rating\], ...
+
 \[player 2\]| \[game name 1\]:\[rating\], \[game name 2\]:\[rating\], ...
+
 ...
 
 Whitespace is ignored and higher numbers mean a greater player preference, usually on a scale of 5 to 1. A smaller range may be more appropriate when fewer choices are offered.
