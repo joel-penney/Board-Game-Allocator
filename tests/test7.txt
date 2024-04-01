@@ -1,0 +1,18 @@
+grid:3:6
+panam:3:4
+uprising:3:4
+root:3:4
+furance:3:4
+realms:3:4
+sherrif:3:6
+dungeon:3:5
+*
+Joel|	grid:5, uprising:5, panam:4, realms:3, sherrif:2, root:2, furance:1, dungeon:1
+Adam|	grid:5, uprising:5, panam:4, realms:4, sherrif:1, root:3, furance:1, dungeon:1
+Fred|	grid:5, uprising:5, panam:1, realms:4, sherrif:1, root:1, furance:3, dungeon:1
+Grace|	grid:1, uprising:1, panam:1, realms:5, sherrif:4, root:1, furance:1, dungeon:1
+Jason|	grid:5, uprising:4, panam:3, realms:3, sherrif:2, root:1, furance:1, dungeon:1
+Colton|	grid:4, uprising:5, panam:4, realms:1, sherrif:2, root:1, furance:1, dungeon:1
+David|	grid:2, uprising:1, panam:4, realms:5, sherrif:2, root:4, furance:3, dungeon:1
+Kyle|	grid:3, uprising:2, panam:3, realms:3, sherrif:1, root:4, furance:4, dungeon:3
+Adrienne|grid:1, uprising:1, panam:1, realms:1, sherrif:5, root:3, furance:5, dungeon:1

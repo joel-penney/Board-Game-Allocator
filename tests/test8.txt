@@ -1,0 +1,12 @@
+betrayl:3:6
+carcassonne:3:5
+alice:3:5
+furnace:3:5
+*
+Joel|	betrayl:5, carcassonne:3, alice:3, furnace:4
+Kyle|	betrayl:3, carcassonne:4, alice:5, furnace:4
+Libby|	betrayl:5, carcassonne:4, alice:2, furnace:3
+Megan|	betrayl:3, carcassonne:4, alice:2, furnace:5
+Felix|	betrayl:5, carcassonne:5, alice:1, furnace:1
+Bailey|	betrayl:3, carcassonne:3, alice:4, furnace:4
+Faven|	betrayl:5, carcassonne:4, alice:3, furnace:2

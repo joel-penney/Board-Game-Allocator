@@ -1,0 +1,17 @@
+catan:3:6
+pandemic:3:4
+grid:3:6
+panam:3:4
+rallyman:3:6
+hadara:3:5
+*
+Joel|	catan:4, rallyman:1, grid:5, pandemic:4, panam:5, hadara:1
+Adam|	catan:4, rallyman:3, grid:2, pandemic:2, panam:1, hadara:4
+Fred|	catan:1, rallyman:1, grid:5, pandemic:5, panam:1, hadara:5
+Grace|	catan:1, rallyman:1, grid:1, pandemic:1, panam:3, hadara:5
+Jason|	catan:3, rallyman:2, grid:5, pandemic:1, panam:3, hadara:4
+Colton|	catan:3, rallyman:3, grid:5, pandemic:2, panam:5, hadara:15
+Libby|	catan:5, rallyman:3, grid:1, pandemic:1, panam:4, hadara:5
+David|	catan:5, rallyman:4, grid:2, pandemic:1, panam:1, hadara:4
+Karaline|catan:3, rallyman:4, grid:1, pandemic:5, panam:3, hadara:4
+Savannah|catan:4, rallyman:1, grid:1, pandemic:5, panam:3, hadara:2
