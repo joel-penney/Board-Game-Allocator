@@ -2,6 +2,7 @@
 
 import itertools
 import statistics
+from typing import List
 
 # classes include str/repr functions for debugging purposes
 
@@ -36,6 +37,34 @@ class Player:
 	def __repr__(self):
 		return self.name + ":" + str(self.prefs)
 
+# Generate classes based on array input (from web version)
+# to be replaced by proper organization; for dev version
+def gen_classes(room_data, game_data):
+	print(">>s")
+	games = []
+	for game_name in game_data:
+		game = Game()
+		game.name = game_name
+		game.minPlayers = int(game_data[game_name]['min'])
+		game.maxPlayers = int(game_data[game_name]['max'])
+		games.append(game)
+	print(">>g")
+	players = []
+	for player_name in room_data['preferences']:
+		print("player_name")
+		print(player_name)
+		player = Player()
+		player.name = player_name
+		for pref_name in room_data['preferences'][player_name]:
+			print("pref_name")
+			print(pref_name)
+			pref_value = room_data['preferences'][player_name][pref_name]
+			player.prefs[pref_name.strip()] = int(pref_value)
+		players.append(player)
+	print(">>p")
+	return games, players
+
+# Read in inpus from file and run calc method
 def main():
 	games = []
 	with open("pref.txt", "r") as pref:
@@ -62,6 +91,15 @@ def main():
 				player.prefs[game_to_rating[0].strip()] = int(game_to_rating[1])
 			players.append(player)
 
+	# games, players: End file read for inputs; run and print
+	result = check_all(games, players)
+
+	pretty_print(result)
+
+# Find best combination of games and players
+def check_all(games: List[Game], players: List[Player]):
+	print(games)# get format for dev
+	print(players)# get format for dev
 	# build all possible sets of games
 	game_sets = []
 	for i in range(len(games)):
@@ -74,7 +112,10 @@ def main():
 		if result != None:
 			results.append(result)
 	results.sort(key=lambda x: x.happiness_rating, reverse=True)
-	pretty_print(results[0])
+	if len(results) > 0:
+		return results[0]
+	else:
+		return None
 
 # For the given players and games, find the Solution of player/game
 # combos with the highest happiness rating

@@ -1,0 +1,13 @@
+panam:3:4
+dungeon:3:4
+betrayal:3:6
+caracassonne:3:5
+*
+Megan|	panam:4, dungeon:3, betrayal:1, caracassonne:4
+Jason|	panam:4, dungeon:2, betrayal:1, caracassonne:3
+Fred|	panam:1, dungeon:4, betrayal:3, caracassonne:4
+Nathan|	panam:4, dungeon:3, betrayal:4, caracassonne:4
+Grace|	panam:1, dungeon:1, betrayal:1, caracassonne:4
+Adam|	panam:4, dungeon:1, betrayal:4, caracassonne:1
+Kyle|	panam:4, dungeon:4, betrayal:3, caracassonne:4
+Joel|	panam:4, dungeon:2, betrayal:3, caracassonne:2

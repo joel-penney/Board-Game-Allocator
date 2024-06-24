@@ -1,0 +1,16 @@
+wonderland:3:5
+sherrif:3:6
+realms:3:5
+dungeon:3:5
+uno:3:5
+dune:3:4
+mayhem:3:5
+*
+KC|			wonderland:4,	sherrif:1,	realms:2,	dungeon:3,	uno:2,	dune:1,	mayhem:2
+FRED|		wonderland:3,	sherrif:1,	realms:3,	dungeon:2,	uno:1,	dune:4,	mayhem:3
+grace|		wonderland:1,	sherrif:3,	realms:4,	dungeon:1,	uno:2,	dune:3,	mayhem:4
+Michael| 	wonderland:3,	sherrif:3,	realms:1,	dungeon:3,	uno:4,	dune:3,	mayhem:3
+c-dog|		wonderland:3,	sherrif:2,	realms:1,	dungeon:1,	uno:1,	dune:4,	mayhem:2
+Joel|		wonderland:2,	sherrif:2,	realms:3,	dungeon:2,	uno:1,	dune:4,	mayhem:3
+Bailey|		wonderland:3,	sherrif:3,	realms:2,	dungeon:3,	uno:2,	dune:3,	mayhem:2
+Feven|		wonderland:3,	sherrif:3,	realms:2,	dungeon:3,	uno:1,	dune:3,	mayhem:3
