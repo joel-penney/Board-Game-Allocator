@@ -58,8 +58,6 @@ def assign():
 	print(games)
 	print("players")
 	print(players)
-	import time
-	time.sleep(3)
 	result = check_all(games, players)
 	print("result")
 	print(result)
