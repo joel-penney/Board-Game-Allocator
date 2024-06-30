@@ -10,12 +10,11 @@ app.config['host'] = '0.0.0.0'
 socketio = SocketIO(app)
 
 games_map = {}
-my_room = {}
-my_room['preferences'] = {}
+all_data = {}
+all_data['preferences'] = {}
 
 @app.route('/', methods=["POST", "GET"])
 def home():
-	#return render_template("home.html", games = list(games_map.keys()))
 	return render_template("home.html", games=games_map)
 
 @socketio.on("nominate")
@@ -24,7 +23,7 @@ def nominate(game_data):
 	games_map[game_data["name"]] = {"min":game_data["mini"], "max":game_data["maxi"]}
 	print(games_map)
 	# then emit a call to reload the voting table
-	socketio.emit("refresh", games_map)
+	socketio.emit("refreshVoteOptions", games_map)
 
 # Save a list of votes and generate a solution
 @socketio.on("vote")
@@ -37,23 +36,23 @@ def vote(vote_list):
 	print(preferences)
 	name = vote_list['name']
 
-	my_room['games'] = list(games_map.keys())
-	my_room['preferences'][name] = preferences
-	socketio.emit("updateRoom", my_room)
+	all_data['games'] = list(games_map.keys())
+	all_data['preferences'][name] = preferences
+	socketio.emit("updateRoom", all_data)
 	socketio.emit("solution", ["Calculating..."])
 	try:
 		assign()
 	except Exception as e:
 		print(e)
-		socketio.emit("solution", ["no solution found"])
-	# socketio.emit("refresh", games_map) # why was this here?
+		socketio.emit("solution", "No solution found (error)")
 
+# Generate solution and return string form to client for direct output
 def assign():
 	print("games_map")
 	print(games_map)
-	print("my_room")
-	print(my_room)
-	games, players = gen_classes(my_room, games_map)
+	print("all_data")
+	print(all_data)
+	games, players = gen_classes(all_data, games_map)
 	print("games")
 	print(games)
 	print("players")
@@ -61,18 +60,19 @@ def assign():
 	result = check_all(games, players)
 	print("result")
 	print(result)
-	ret = dict.fromkeys([result.happiness_rating])
-	string = ""
+
+	if result == None:
+		socketio.emit("solution", "No solution found")
+		return
+
+	assignments = ""
 	for assign_game in result.assignments:
-		if len(string) > 0:
-			string += ". "
-		string += assign_game.name + ": "
-		for assign_player in result.assignments[assign_game]:
-			string += assign_player.name + " "
-	ret[result.happiness_rating] = string
-	print("ret")
-	print(ret)
-	socketio.emit("solution", ret)
+		list_names = [assign_player.name for assign_player in result.assignments[assign_game]]
+		assignments += assign_game.name + ": " + ", ".join(list_names) + "."
+
+	print("assignments")
+	print(assignments)
+	socketio.emit("solution", assignments)
 
 if __name__ == "__main__":
 	socketio.run(app, host='0.0.0.0', debug=True)

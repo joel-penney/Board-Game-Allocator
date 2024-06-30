@@ -130,8 +130,9 @@
       name: $('#username').val(),
       votes: votes
     });
-    // Don't be changing your name now
-    //$("#username").prop("readonly", true);
+
+    // And don't be changing your name now
+    $("#username").prop("readonly", true);
   };
 </script>
 
@@ -148,35 +149,44 @@
     <tbody class="table" id="tableBody">
     </tbody>
   </table>
+  <hr />
+  <div id="results">
+    <div class="text" id="solution"></div>
+  </div>
 </div>
-<div id="results">
-  <div class="text" id="solution"></div>
-</div>
+
 <script type="text/javascript">
-  var socketio = io();
 
   // Nice-to-have changes:
   // 1. When a new game is nominated, it will wipe the selected values
-  // in the voting table. Want to not.
+  // in the voting table. Want to not. -> DONE!! i think
   // 2. When loading a new page, load results as well as voting table
-  socketio.on("refresh", (games) => {refreshVoting(games)});
+  // 3. Be able to delete game/player/all without rebooting server
+
+  var socketio = io();
+  socketio.on("refreshVoteOptions", (games) => {refreshVoting(games)});
+
   $(document).ready( function() { refreshVoting({{games|tojson}}) } );
+
   function refreshVoting(games) {
-    console.log("refresh");
+    console.log("refreshVoteOptions");
     console.log(games);
-    $('#votingBlock').empty();
-    $.each(games, function(game, sizeRange) {
-      console.log(game);
+    $.each(games, function(gameName, range) {
+      // don't recreate lines that already exist
+      var gameNameSelector = "[name='" + gameName + "-inlineRadioOptions']";
+      //console.log(gameNameSelector);
+      if ($(gameNameSelector).length > 0) return;
+
       $('#votingBlock').append(`
         <div class="text-center mb-3">
           <div class="form-group text-center mb-3">
-            <strong style="padding-right:10px;">${game}:</strong>
+            <strong style="padding-right:10px;">${gameName} (${range["min"]}-${range["max"]}):</strong>
 
             <div class="form-check form-check-inline">
               <input
                 class="form-check-input"
                 type="radio"
-                name="${game}-inlineRadioOptions"
+                name="${gameName}-inlineRadioOptions"
                 id="inlineRadio1"
                 value="1"
                 required=""
@@ -188,7 +198,7 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="${game}-inlineRadioOptions"
+                name="${gameName}-inlineRadioOptions"
                 id="inlineRadio2"
                 value="2"
               />
@@ -199,7 +209,7 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="${game}-inlineRadioOptions"
+                name="${gameName}-inlineRadioOptions"
                 id="inlineRadio3"
                 value="3"
               />
@@ -210,7 +220,7 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="${game}-inlineRadioOptions"
+                name="${gameName}-inlineRadioOptions"
                 id="inlineRadio4"
                 value="4"
               />
@@ -227,10 +237,10 @@
 
   // Given a room's preference data, update the table with the latest scores
   //  -> {player:{g1:s1, g2:s2}}
-  socketio.on("updateRoom", (my_room) => {
-    console.log(my_room);
-    preferences = my_room["preferences"];
-    games = my_room["games"];
+  socketio.on("updateRoom", (all_data) => {
+    console.log(all_data);
+    preferences = all_data["preferences"];
+    games = all_data["games"];
     //console.log(preferences);
     //console.log(games);
     $("#tableHead").empty();
@@ -262,16 +272,13 @@
   socketio.on("solution", (solution) => {
     console.log("Solution")
     $("#solution").empty()
-
-    $.each(solution, function(index, value) {
-      $('#solution').append(`
+    $('#solution').append(`
       Solution:
       <span>
-        <strong>${index}: ${value.toString()}</strong>
+        <strong>${solution.toString()}</strong>
       </span>
       <br />
-      `)
-    });
+    `)
   });
 
 </script>
