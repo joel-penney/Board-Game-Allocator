@@ -158,10 +158,8 @@
 <script type="text/javascript">
 
   // Nice-to-have changes:
-  // 1. When a new game is nominated, it will wipe the selected values
-  // in the voting table. Want to not. -> DONE!! i think
-  // 2. When loading a new page, load results as well as voting table
-  // 3. Be able to delete game/player/all without rebooting server
+  // 1. When loading a new page, load results as well as voting table
+  // 2. Be able to delete game/player/all without rebooting server
 
   var socketio = io();
   socketio.on("refreshVoteOptions", (games) => {refreshVoting(games)});

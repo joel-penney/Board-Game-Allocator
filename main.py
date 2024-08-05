@@ -19,6 +19,7 @@ def home():
 
 @socketio.on("nominate")
 def nominate(game_data):
+	game_data["name"] = game_data["name"].strip()# do some proper string trimming, yike
 	# could stand to do an error check here
 	games_map[game_data["name"]] = {"min":game_data["mini"], "max":game_data["maxi"]}
 	print(games_map)
@@ -34,7 +35,7 @@ def vote(vote_list):
 	for game in votes:
 		preferences[game] = int(votes[game])
 	print(preferences)
-	name = vote_list['name']
+	name = vote_list['name'].strip()
 
 	all_data['games'] = list(games_map.keys())
 	all_data['preferences'][name] = preferences

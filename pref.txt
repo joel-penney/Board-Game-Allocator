@@ -1,17 +1,12 @@
-uprising:3:4
-sheriff:3:6
-realms:3:6
 dune:3:4
-clank:3:4
-grid:3:5
-catan:3:4
-furnace:3:4
+shadows:3:4
+call:3:4
+space:3:4
+catacombs:3:4
 *
-Colton|		uprising:4,	sheriff:1,	realms:1,	dune:4,	clank:1,	grid:2,	catan:1,	furnace:1
-KC|			uprising:1,	sheriff:1,	realms:2,	dune:4,	clank:4,	grid:2,	catan:1,	furnace:3
-grace|		uprising:3,	sheriff:3,	realms:3,	dune:4,	clank:1,	grid:1,	catan:1,	furnace:1
-Megan|		uprising:1,	sheriff:3,	realms:1,	dune:1,	clank:4,	grid:1,	catan:1,	furnace:1
-Joel|		uprising:4,	sheriff:2,	realms:2,	dune:4,	clank:3,	grid:2,	catan:1,	furnace:2
-kicuras|	uprising:1,	sheriff:3,	realms:3,	dune:3,	clank:1,	grid:1,	catan:1,	furnace:1
-FRED|		uprising:3,	sheriff:2,	realms:2,	dune:4,	clank:3,	grid:2,	catan:1,	furnace:3
-Jason|		uprising:4,	sheriff:2,	realms:1,	dune:3,	clank:2,	grid:4,	catan:3,	furnace:3
+stacey|	shadows:4,	call:1,	dune:3, space:4,	catacombs:2
+FRED|	shadows:3,	call:2,	dune:4,	space:1,	catacombs:4
+KC|		shadows:4,	call:4,	dune:1,	space:4,	catacombs:4
+Colt|	shadows:1,	call:3,	dune:4,	space:1,	catacombs:2
+Joel|	shadows:3,	call:1,	dune:4,	space:3,	catacombs:2
+shu|	shadows:3,	call:3,	dune:3,	space:3,	catacombs:3

@@ -56,10 +56,11 @@ def gen_classes(room_data, game_data):
 		player = Player()
 		player.name = player_name
 		for pref_name in room_data['preferences'][player_name]:
+			pref_name = pref_name.strip()
 			print("pref_name")
 			print(pref_name)
 			pref_value = room_data['preferences'][player_name][pref_name]
-			player.prefs[pref_name.strip()] = int(pref_value)
+			player.prefs[pref_name] = int(pref_value)
 		players.append(player)
 	print(">>p")
 	return games, players
@@ -98,8 +99,8 @@ def main():
 
 # Find best combination of games and players
 def check_all(games: List[Game], players: List[Player]):
-	print(games)# get format for dev
-	print(players)# get format for dev
+	#print(games)# get format for dev
+	#print(players)# get format for dev
 	# build all possible sets of games
 	game_sets = []
 	for i in range(len(games)):
