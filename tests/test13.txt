@@ -1,0 +1,12 @@
+dune:3:4
+shadows:3:4
+call:3:4
+space:3:4
+catacombs:3:4
+*
+stacey|	shadows:4,	call:1,	dune:3, space:4,	catacombs:2
+FRED|	shadows:3,	call:2,	dune:4,	space:1,	catacombs:4
+KC|		shadows:4,	call:4,	dune:1,	space:4,	catacombs:4
+Colt|	shadows:1,	call:3,	dune:4,	space:1,	catacombs:2
+Joel|	shadows:3,	call:1,	dune:4,	space:3,	catacombs:2
+shu|	shadows:3,	call:3,	dune:3,	space:3,	catacombs:3
