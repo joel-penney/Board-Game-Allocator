@@ -69,7 +69,7 @@ def assign():
 	assignments = ""
 	for assign_game in result.assignments:
 		list_names = [assign_player.name for assign_player in result.assignments[assign_game]]
-		assignments += assign_game.name + ": " + ", ".join(list_names) + "."
+		assignments += assign_game.name + ": " + ", ".join(list_names) + ". "
 
 	print("assignments")
 	print(assignments)
